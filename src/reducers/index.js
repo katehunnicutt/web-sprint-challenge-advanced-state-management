@@ -30,12 +30,15 @@ export const reducer = (state = initialState, action) => {
         case NEW_SMURF:
             return{
                 ...state,
-                smurfs: [{...state.smurfs, 
+                smurfs: [
+                ...state.smurfs, 
+                    {
                         name: action.payload.name,
                         position: action.payload.position,
                         nickname: action.payload.nickname,
                         description: action.payload.description,
-                }]
+                }],
+                error: "",
             }
         case GET_SMURFS_START:
             return {
